@@ -15,6 +15,8 @@ img {
 /* COMMON */
 
 body {
+  /* Shape */
+  min-width: 360px;
   /* Font */
   font-family: sans-serif;
   font-weight: 300;
@@ -33,6 +35,8 @@ main {
   height: calc(100vh - 70px);
   /* Color */
   background-color: #212e3b;
+  /* Overflow */
+  overflow: scroll;
 }
 
 .container {
@@ -40,7 +44,7 @@ main {
   max-width: 1200px;
   margin: auto;
   /* Padding */
-  /* padding: 0 50px; */
+  padding: 0 20px;
 }
 
 .flex {
@@ -52,9 +56,30 @@ main {
 /* ------------------ */
 /* HEADER */
 
+header .container .flex {
+  padding: 0 5px;
+}
+
+header .flex {
+  /* Display */
+  justify-content: space-between;
+  align-items: center;
+}
+
 .header-logo {
   /* Shape */
   width: 50px;
+}
+
+.genre-selector select {
+  /* Shape */
+  padding: 10px 50px;
+  /* Style */
+  outline: none;
+  border-radius: 10px;
+  /* Color */
+  background-color: #313b45;
+  color: #fff;
 }
 
 /* ------------------ */
@@ -66,8 +91,6 @@ main {
 }
 
 .cd-gutter {
-  /* Shape */
-  width: calc(100% / 6);
   /* Padding */
   padding: 20px 10px 0px 10px;
 }
@@ -129,4 +152,72 @@ main {
 .cd-item:hover .cd-year {
   /* Color */
   color: #313b45;
+}
+
+@media screen and (min-width: 360px) and (max-width: 559px) {
+  .container {
+    /* Padding */
+    padding: 0 10px;
+  }
+
+  .cd-gutter {
+    /* Shape */
+    width: calc(100% / 2);
+  }
+
+  .cd-item {
+    /* Shape */
+    height: 350px;
+  }
+}
+
+@media screen and (min-width: 560px) and (max-width: 767px) {
+  .container {
+    /* Padding */
+    padding: 0 10px;
+  }
+
+  .cd-gutter {
+    /* Shape */
+    width: calc(100% / 3);
+  }
+
+  .cd-item {
+    /* Shape */
+    height: 350px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 990px) {
+  .container {
+    /* Padding */
+    padding: 0 10px;
+  }
+
+  .cd-gutter {
+    /* Shape */
+    width: calc(100% / 4);
+  }
+
+  .cd-item {
+    /* Shape */
+    height: 340px;
+  }
+}
+
+@media screen and (min-width: 991px) {
+  .container {
+    /* Padding */
+    padding: 0 10px;
+  }
+
+  .cd-gutter {
+    /* Shape */
+    width: calc(100% / 5);
+  }
+
+  .cd-item {
+    /* Shape */
+    height: 320px;
+  }
 }

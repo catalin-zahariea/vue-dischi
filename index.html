@@ -23,6 +23,14 @@
             <div class="header-logo">
               <img src="img/download.png" alt="Logo" />
             </div>
+            <div class="genre-selector">
+              <select v-model="genreSelect">
+                <option value="">Seleziona un genere</option>
+                <option v-for="genre in genreArray" :value="genre">
+                  {{genre}}
+                </option>
+              </select>
+            </div>
           </div>
         </div>
       </header>
@@ -33,10 +41,14 @@
         <div class="container">
           <div class="cd-list">
             <div class="flex">
-              <div class="cd-gutter" v-for="cd in cdArray">
+              <div
+                class="cd-gutter"
+                v-for="cd in cdArray"
+                v-if="cd.genre == genreSelect || genreSelect == ''"
+              >
                 <div class="cd-item">
                   <div class="cd-img">
-                    <img :src="cd.poster" alt="" />
+                    <img :src="cd.poster" alt="cd.title" />
                   </div>
                   <div class="cd-title">{{cd.title}}</div>
                   <div class="cd-author">{{cd.author}}</div>
