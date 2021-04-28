@@ -80,6 +80,8 @@ header .flex {
   /* Color */
   background-color: #313b45;
   color: #fff;
+  /* Cursor */
+  cursor: pointer;
 }
 
 /* ------------------ */
@@ -218,6 +220,6 @@ header .flex {
 
   .cd-item {
     /* Shape */
-    height: 320px;
+    height: 350px;
   }
 }
