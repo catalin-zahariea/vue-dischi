@@ -13,9 +13,12 @@ var app = new Vue({
         }
       }
     },
-  },
-  updated() {
-    this.musicGenres(this.cdArray);
+    sortByYear(array) {
+      array.sort(function (a, b) {
+        console.log(array);
+        return parseInt(a.year) - parseInt(b.year);
+      });
+    },
   },
   mounted() {
     axios
@@ -24,5 +27,11 @@ var app = new Vue({
         const res = response.data;
         this.cdArray = res.response;
       });
+  },
+  beforeUpdate() {
+    this.sortByYear(this.cdArray);
+  },
+  updated() {
+    this.musicGenres(this.cdArray);
   },
 });
