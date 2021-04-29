@@ -73,7 +73,7 @@ header .flex {
 
 .genre-selector select {
   /* Shape */
-  padding: 10px 50px;
+  padding: 10px 20px;
   /* Style */
   outline: none;
   border-radius: 10px;
