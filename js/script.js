@@ -6,13 +6,6 @@ var app = new Vue({
     genreSelect: "",
   },
   methods: {
-    musicGenres(array) {
-      for (let i = 0; i < array.length; i++) {
-        if (!this.genreArray.includes(array[i].genre)) {
-          this.genreArray.push(array[i].genre);
-        }
-      }
-    },
     sortByYear(array) {
       array.sort(function (a, b) {
         console.log(array);
@@ -26,6 +19,12 @@ var app = new Vue({
       .then((response) => {
         const res = response.data;
         this.cdArray = res.response;
+
+        this.cdArray.forEach((cd) => {
+          if (!this.genreArray.includes(cd.genre)) {
+            this.genreArray.push(cd.genre);
+          }
+        });
       });
   },
   beforeUpdate() {
