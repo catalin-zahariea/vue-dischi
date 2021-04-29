@@ -15,7 +15,7 @@ var app = new Vue({
 
         // Sort CD Array by year.
         this.cdArray.sort((a, b) => {
-          return parseInt(a.year) - parseInt(b.year);
+          return a.year - b.year;
         });
 
         // Create an array of genres.
