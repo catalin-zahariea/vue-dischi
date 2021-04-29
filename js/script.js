@@ -26,11 +26,6 @@ var app = new Vue({
           }
         });
       });
-  },
-  beforeUpdate() {
     this.sortByYear(this.cdArray);
-  },
-  updated() {
-    this.musicGenres(this.cdArray);
   },
 });
